@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button onclick="choi()" type="button" id="choi" style="width: 400px;">Chơi</button>
+<script>
+    function choi() {
+        let kt = true;
+        while (kt) {
+            alert("Nhập Vào Số Muốn Đoán");
+            let start = parseInt(prompt("Nhập Số Bắt Đầu "));
+            let end = parseInt(prompt("Nhập Số Kết Thúc"));
+            let num = parseInt(prompt("Nhập Số Muốn Đoán"));
+            let random1 = Math.round(Math.random() * (end - start) + start);
+            console.log(random1);
+            if (num === random1) {
+                alert("Chúc Mừng");
+                document.getElementById('choi').innerText = 'Chơi Lại';
+                kt = false;
+            } else if(num<random1){
+                alert("thua rồi");
+            }
+            else {
+                alert("lớn hơn");
+            }
+        }
+    }
+</script>
+</body>
+</html>
